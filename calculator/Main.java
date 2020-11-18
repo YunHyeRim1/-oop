@@ -7,6 +7,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		CalculatorDTO calculator = new CalculatorDTO();
 		CalculatorController controller = new CalculatorController();
+		CalculatorService service = new CalculatorServiceImpl();
 		
 		System.out.println("계산기 시작");
 		System.out.println("숫자 1을 입력하세요.");

@@ -2,7 +2,7 @@ package calculator;
 
 public class CalculatorController {
 	int execute(CalculatorDTO param) {
-		CalculatorService service = new CalculatorService();
+		CalculatorService service = new CalculatorServiceImpl();
 	
 		int result = 0;
 		String opcode = param.getOpcode();
@@ -12,11 +12,11 @@ public class CalculatorController {
 		}else if(opcode.equals("-")) {
 			result = service.minus(param);
 		}else if(opcode.equals("*")) {
-			result = service.multiply(param);
+			result = service.multi(param);
 		}else if(opcode.equals("/")) {
-			result = service.divide(param);
+			result = service.divid(param);
 		}else if(opcode.equals("%")) {
-			result = service.modulo(param);
+			result = service.modul(param);
 		}
 		
 		return result;
