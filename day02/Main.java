@@ -51,7 +51,7 @@ public class Main {
         bmi.setHeight(height);
         
         System.out.println("bmi 수치는: "+(bmi.getWeight()/bmi.getHeight()/bmi.getHeight())
-        		+"%입니다.\n");
+        		+"%입니다.");
     
 		
 	}

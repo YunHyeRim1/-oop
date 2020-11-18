@@ -1,24 +1,31 @@
 package calculator;
 
+import bmi.*;
+import user.*;
+
 public class CalculatorController {
-	int execute(CalculatorDTO param) {
+	public int execute(CalculatorDTO calculator) {
 		CalculatorService service = new CalculatorServiceImpl();
 	
 		int result = 0;
-		String opcode = param.getOpcode();
+		String opcode = calculator.getOpcode();
 		
 		if(opcode.equals("+")) {
-			result = service.add(param);
+			result = service.add(calculator);
 		}else if(opcode.equals("-")) {
-			result = service.minus(param);
+			result = service.minus(calculator);
 		}else if(opcode.equals("*")) {
-			result = service.multi(param);
+			result = service.multi(calculator);
 		}else if(opcode.equals("/")) {
-			result = service.divid(param);
+			result = service.divid(calculator);
 		}else if(opcode.equals("%")) {
-			result = service.modul(param);
+			result = service.modul(calculator);
 		}
-		
 		return result;
+	}
+
+	public String getbmi(UserDTO user, BmiDTO bmi) {
+		return String.format("%s님의 BMI 지수는 %f", user.getName(), 
+				new BmiServiceImpl().calcBmi(bmi));
 	}
 }
