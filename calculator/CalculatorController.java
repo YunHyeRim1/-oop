@@ -8,8 +8,7 @@ public class CalculatorController {
 		CalculatorService service = new CalculatorServiceImpl();
 	
 		int result = 0;
-		String opcode = calculator.getOpcode();
-		
+		String opcode = calculator.getOpcode();	
 		if(opcode.equals("+")) {
 			result = service.add(calculator);
 		}else if(opcode.equals("-")) {
@@ -24,8 +23,4 @@ public class CalculatorController {
 		return result;
 	}
 
-	public String getbmi(UserDTO user, BmiDTO bmi) {
-		return String.format("%s님의 BMI 지수는 %f", user.getName(), 
-				new BmiServiceImpl().calcBmi(bmi));
-	}
 }
